@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #d4d4d4;
+  --muted: #737373;
+  --accent: #e5e5e5;
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border-subtle: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-background-gradient: background-gradient
+    var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95)
+    infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes background-gradient {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    animation-delay: var(--background-gradient-delay, 0s);
   }
+  20% {
+    transform: translate(
+      calc(100% * var(--tx-1, 1)),
+      calc(100% * var(--ty-1, 1))
+    );
+  }
+  40% {
+    transform: translate(
+      calc(100% * var(--tx-2, -1)),
+      calc(100% * var(--ty-2, 1))
+    );
+  }
+  60% {
+    transform: translate(
+      calc(100% * var(--tx-3, 1)),
+      calc(100% * var(--ty-3, -1))
+    );
+  }
+  80% {
+    transform: translate(
+      calc(100% * var(--tx-4, -1)),
+      calc(100% * var(--ty-4, -1))
+    );
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), ui-monospace, "Cascadia Code", "Fira Code",
+    monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Utility for section dividers */
+.section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
