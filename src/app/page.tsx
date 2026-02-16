@@ -309,7 +309,7 @@ function ExperienceCard({
   return (
     <motion.div
       ref={ref}
-      className={`relative overflow-hidden rounded-2xl border border-white/5 p-5 sm:p-6 ${exp.span}`}
+      className={`relative overflow-hidden rounded-2xl border border-white/8 p-5 sm:p-6 ${exp.span}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -347,22 +347,22 @@ function ExperienceCard({
           {exp.tags.split(", ").map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-white/8 bg-white/5 px-2 py-0.5 text-[10px] tracking-wider text-white/35"
+              className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] tracking-wider text-white/50"
             >
               {tag}
             </span>
           ))}
         </div>
-        <p className="mb-3 text-sm leading-relaxed text-white/50">
+        <p className="mb-3 text-sm leading-relaxed text-white/65">
           {exp.description}
         </p>
         {exp.roles.map((role) => (
           <div
             key={role.title}
-            className="flex items-baseline justify-between border-t border-white/5 py-2"
+            className="flex items-baseline justify-between border-t border-white/8 py-2"
           >
-            <span className="text-sm text-white/60">{role.title}</span>
-            <span className="ml-3 shrink-0 text-xs text-white/30">
+            <span className="text-sm text-white/70">{role.title}</span>
+            <span className="ml-3 shrink-0 text-xs text-white/45">
               {role.date}
             </span>
           </div>
@@ -382,9 +382,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <div className="flex items-center gap-6 text-xs tracking-wider text-white/50">
-          <span className="text-white/90">AK</span>
-        </div>
+        <div className="flex items-center gap-6 text-xs tracking-wider text-white/50" />
         <div className="flex items-center gap-4">
           {navLinks.map((link) => (
             <a
@@ -410,13 +408,13 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <Image
-            src="/IMG_7025.JPG"
+            src="/logos/1.jpg.webp"
             alt="Aryan Kumar"
             width={96}
             height={96}
             className="h-20 w-20 shrink-0 rounded-lg object-cover grayscale sm:h-24 sm:w-24"
           />
-          <div className="min-w-0">
+          <div className="min-w-0 font-mono flex h-20 flex-col justify-center sm:h-24">
             <TextScramble
               as="h1"
               className="mb-1 text-2xl font-bold tracking-tight text-white sm:text-3xl"
@@ -428,21 +426,21 @@ export default function Home() {
             </TextScramble>
             <TextScramble
               as="p"
-              className="text-sm tracking-wider text-white/50"
+              className="text-sm tracking-wider text-white/60"
               duration={1.0}
               speed={0.03}
               characterSet="ABCDEFGHIJKLMNOPQRSTUVWXYZ/&@. "
             >
               ML &amp; SOFTWARE ENGINEER / MATH &amp; CS @SJSU
             </TextScramble>
-            <div className="mt-1.5 flex items-center gap-2 text-xs tracking-wider text-white/30">
+            <div className="mt-1.5 flex items-center gap-2 text-xs tracking-wider text-white/45">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
               <TextScramble
                 as="span"
-                className="text-[11px] tracking-[0.15em] text-white/30"
+                className="text-[11px] tracking-[0.15em] text-white/45"
                 duration={1.4}
                 speed={0.04}
                 characterSet="0123456789°NSEW. "
@@ -465,10 +463,10 @@ export default function Home() {
           viewport={viewportOnce}
           custom={0}
         >
-          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/40">
+          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/55">
             ABOUT ME
           </h2>
-          <p className="mb-4 text-white/70">
+          <p className="mb-4 leading-relaxed text-white/80">
             I am an ML &amp; software engineer at{" "}
             <a
               href="https://www.boardwalktech.com"
@@ -483,7 +481,7 @@ export default function Home() {
             infrastructure, research, and real-time telemetry for electric race
             cars.
           </p>
-          <p className="mb-4 text-white/70">
+          <p className="mb-4 leading-relaxed text-white/80">
             Currently building{" "}
             <a
               href="https://synqui.com"
@@ -523,7 +521,7 @@ export default function Home() {
           variants={fadeUp}
           custom={0}
         >
-          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/40">
+          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/55">
             EXPERIENCE
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -618,23 +616,23 @@ export default function Home() {
           viewport={viewportOnce}
           custom={0}
         >
-          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/40">
+          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/55">
             TECH STACK
           </h2>
           <div className="grid grid-cols-2 gap-x-12 gap-y-5 sm:grid-cols-3">
             {techGroups.map((group) => (
               <div key={group.title}>
-                <p className="mb-2 text-[10px] font-bold tracking-[0.25em] text-white/25">
+                <p className="mb-2 text-[10px] font-bold tracking-[0.25em] text-white/40">
                   {group.title}
                 </p>
                 <ul className="space-y-1">
                   {group.items.map((tech) => (
                     <li
                       key={tech.label}
-                      className="group flex min-w-0 items-center gap-2 text-xs tracking-wider text-white/40 transition hover:text-white/80"
+                      className="group flex min-w-0 items-center gap-2 text-xs tracking-wider text-white/55 transition hover:text-white/85"
                     >
-                      <tech.icon className="h-3 w-3 shrink-0 text-white/20 transition group-hover:text-white/50" />
-                      <span className="break-words">{tech.label}</span>
+                      <tech.icon className="h-3 w-3 shrink-0 text-white/35 transition group-hover:text-white/60" />
+                      <span className="wrap-break-word">{tech.label}</span>
                     </li>
                   ))}
                 </ul>
@@ -654,7 +652,7 @@ export default function Home() {
           viewport={viewportOnce}
           custom={0}
         >
-          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/40">
+          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/55">
             EDUCATION
           </h2>
           <div className="mb-4 flex items-start justify-between">
@@ -668,14 +666,14 @@ export default function Home() {
                 SAN JOS&Eacute; STATE UNIVERSITY
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-40 transition group-hover:opacity-100" />
               </a>
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-white/60">
                 Bachelor&apos;s in Mathematics
               </p>
             </div>
-            <span className="text-xs text-white/30">2022 – 2026</span>
+            <span className="text-xs text-white/45">2022 – 2026</span>
           </div>
-          <p className="mb-1.5 text-xs text-white/40">Relevant coursework</p>
-          <div className="mb-4 flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wider text-white/30">
+          <p className="mb-1.5 text-xs text-white/50">Relevant coursework</p>
+          <div className="mb-4 flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wider text-white/45">
             <span>LINEAR ALGEBRA I & II</span>
             <span>REAL ANALYSIS</span>
             <span>NUMERICAL ANALYSIS & SCIENTIFIC COMPUTING</span>
@@ -686,8 +684,8 @@ export default function Home() {
             <span>CRYPTOGRAPHY</span>
             <span>PROOFS</span>
           </div>
-          <p className="mb-1.5 text-xs text-white/40">Achievements & certifications</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wider text-white/30">
+          <p className="mb-1.5 text-xs text-white/50">Achievements & certifications</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wider text-white/45">
             <span>FOUNDER INSTITUTE</span>
             <span>BUILDSPACE S5</span>
             <span>ORACLE CLOUD INFRASTRUCTURE 2024</span>
@@ -706,7 +704,7 @@ export default function Home() {
           viewport={viewportOnce}
           custom={0}
         >
-          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/40">
+          <h2 className="mb-6 text-sm font-bold tracking-[0.2em] text-white/55">
             WHEN I&apos;M NOT CODING
           </h2>
           <div className="flex flex-wrap gap-4 text-2xl">
@@ -728,12 +726,12 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <p className="mb-6 text-xs italic leading-relaxed text-white/25">
+          <p className="mb-6 text-xs italic leading-relaxed text-white/40">
             &ldquo;Become the best in the world at what you do. Keep redefining
             what you do until this is true.&rdquo;
-            <span className="ml-1 not-italic text-white/15">— Naval Ravikant</span>
+            <span className="ml-1 not-italic text-white/30">— Naval Ravikant</span>
           </p>
-          <p className="text-xs tracking-wider text-white/20">
+          <p className="text-xs tracking-wider text-white/35">
             &copy;{new Date().getFullYear()}. ALL RIGHTS RESERVED.
           </p>
         </motion.footer>
