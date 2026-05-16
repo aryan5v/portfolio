@@ -15,22 +15,24 @@ const geistMono = Geist_Mono({
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://aryank.xyz";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Aryan Kumar — ML & Software Engineer",
   description:
-    "ML & Software Engineer in the Bay Area. AI agents, RAG pipelines, LLM systems. Building at Boardwalktech. Always up for building and learning alongside great people.",
+    "ML engineer in the Bay Area working on production AI systems, open-source ML tooling, deep learning systems, and generative models.",
   keywords: [
     "ML Engineer",
     "AI Engineer",
     "Machine Learning",
+    "Deep Learning",
+    "Diffusion Models",
+    "Open Source",
     "Bay Area",
-    "RAG",
-    "LLM",
     "Aryan Kumar",
   ],
   openGraph: {
     title: "Aryan Kumar — ML & Software Engineer",
     description:
-      "ML & Software Engineer in the Bay Area. AI agents, RAG pipelines, LLM systems. Building at Boardwalktech.",
+      "ML engineer in the Bay Area working on production AI systems, open-source ML tooling, deep learning systems, and generative models.",
     url: baseUrl,
     siteName: "Aryan Kumar",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Aryan Kumar — ML & Software Engineer" }],
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aryan Kumar — ML & Software Engineer",
-    description: "ML & Software Engineer. AI agents, RAG, LLM systems. Bay Area.",
+    description:
+      "ML engineer working on production AI systems, open-source ML tooling, and generative models.",
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
@@ -54,6 +57,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLM profile guide"
+        />
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href="/profile.md"
+          title="Aryan Kumar profile"
+        />
+        <link
+          rel="alternate"
+          type="text/markdown"
+          href="/open-source.md"
+          title="Aryan Kumar open-source work"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

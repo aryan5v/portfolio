@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aryank.xyz/sitemap.xml
+
+# Agent-readable profile resources:
+# https://aryank.xyz/llms.txt
+# https://aryank.xyz/profile.md
+# https://aryank.xyz/open-source.md

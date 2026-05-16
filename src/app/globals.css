@@ -68,6 +68,73 @@ body {
   line-height: 1.7;
 }
 
+.riso-texture {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(232, 223, 208, 0.18) 1px, transparent 0),
+    radial-gradient(circle at 2px 3px, rgba(216, 121, 36, 0.12) 0.8px, transparent 0),
+    linear-gradient(115deg, rgba(31, 143, 189, 0.08), transparent 34%, rgba(216, 121, 36, 0.06) 72%, transparent);
+  background-position:
+    0 0,
+    7px 11px,
+    0 0;
+  background-size:
+    7px 7px,
+    13px 13px,
+    100% 100%;
+  filter: contrast(1.08);
+  mix-blend-mode: soft-light;
+}
+
+.lamp-spill {
+  background: radial-gradient(
+    circle at min(79vw, calc(50% + 520px)) 265px,
+    rgba(255, 205, 118, 0.24) 0,
+    rgba(232, 139, 48, 0.13) 38px,
+    rgba(232, 139, 48, 0.04) 105px,
+    transparent 175px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.66;
+}
+
+.lamp-spill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      168deg,
+      rgba(255, 207, 127, 0.13) 0%,
+      rgba(226, 127, 42, 0.065) 38%,
+      rgba(226, 127, 42, 0.025) 74%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      168deg,
+      rgba(255, 224, 154, 0.055) 0 1px,
+      transparent 1px 34px
+    );
+  clip-path: polygon(75% 13%, 82% 17%, 74% 100%, 38% 100%);
+  filter: blur(15px);
+  mix-blend-mode: screen;
+  opacity: 0.26;
+}
+
+.lamp-spill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 77% 28%, rgba(255, 245, 195, 0.82) 0 1px, rgba(255, 203, 104, 0.14) 2px, transparent 5px),
+    radial-gradient(circle at 73% 43%, rgba(255, 232, 165, 0.72) 0 1px, rgba(255, 188, 83, 0.12) 2px, transparent 4px),
+    radial-gradient(circle at 69% 56%, rgba(255, 245, 205, 0.68) 0 1px, rgba(255, 203, 104, 0.11) 2px, transparent 5px),
+    radial-gradient(circle at 66% 71%, rgba(255, 238, 180, 0.7) 0 1px, rgba(255, 184, 80, 0.12) 2px, transparent 5px),
+    radial-gradient(circle at 58% 82%, rgba(255, 224, 150, 0.56) 0 1px, rgba(255, 181, 74, 0.1) 2px, transparent 5px);
+  clip-path: polygon(75% 13%, 82% 17%, 74% 100%, 38% 100%);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
 ::selection {
   background: rgba(255, 255, 255, 0.12);
 }
