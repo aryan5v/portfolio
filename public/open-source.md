@@ -12,11 +12,13 @@ Project links:
 Selected public work:
 - FastVideo #1244: https://github.com/hao-ai-lab/FastVideo/pull/1244
 - FastVideo #1307: https://github.com/hao-ai-lab/FastVideo/pull/1307
+- FastVideo #1363: https://github.com/hao-ai-lab/FastVideo/pull/1363
 
 Summary:
 - LongCat video generation and self-forcing work
 - Training-side model wrapper and causal rollout plumbing
 - KV-cache behavior, causal masking, validation, and related practical systems work
+- Lucy Edit inference scaffold work for FastVideo's preset-based API and Wan pipeline structure
 
 ## ml-intern
 

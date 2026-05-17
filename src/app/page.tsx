@@ -55,6 +55,10 @@ const prLinks = [
     label: "FastVideo #1307",
     href: "https://github.com/hao-ai-lab/FastVideo/pull/1307",
   },
+  {
+    label: "FastVideo #1363",
+    href: "https://github.com/hao-ai-lab/FastVideo/pull/1363",
+  },
 ];
 
 const experience = [
